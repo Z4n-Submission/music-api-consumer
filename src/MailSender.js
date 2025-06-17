@@ -17,7 +17,7 @@ class MailSender {
       from: 'Music Api Apps',
       to: targetEmail,
       subject: 'Ekspor Daftar Lagu Dalam Playlist',
-      text: 'Terlampir hasil dari ekspor playlist mucik Anda',
+      text: 'Terlampir hasil dari ekspor playlist musik Anda',
       attachments: [
         {
           filename: 'playlists.json',
