@@ -20,7 +20,7 @@ class MailSender {
       text: 'Terlampir hasil dari ekspor playlist mucik Anda',
       attachments: [
         {
-          filename: 'notes.json',
+          filename: 'playlists.json',
           content,
         },
       ],

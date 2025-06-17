@@ -14,9 +14,8 @@ class MusicService {
   async getSongsFromPlaylist(playlistId) {
     const queryPlaylist = {
       text: `
-        SELECT playlist.id, playlist.name, users.username 
-        FROM playlist 
-        JOIN users ON playlist.owner = users.id 
+        SELECT playlist.id, playlist.name
+        FROM playlist
         WHERE playlist.id = $1
       `,
       values: [playlistId],
@@ -36,8 +35,10 @@ class MusicService {
 
     const songsResult = await this.pool.query(querySongs);
     return {
-      ...playlistResult.rows[0],
-      songs: songsResult.rows,
+      playlist: {
+        ...playlistResult.rows[0],
+        songs: songsResult.rows,
+      },
     };
   }
 }
